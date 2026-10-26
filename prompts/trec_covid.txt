@@ -1,0 +1,17 @@
+Find and rank scientific documents relevant to the information need in the query. Retrieve evidence documents rather than answering the question.
+
+Workspace
+The Map lists source_id, titles, navigation paths, and short passages. IN sources are readable at .cep/s/<source_id>.txt. OUT sources can be acquired with graphexpand. All acquired sources remain in .cep/s/ and .cep/catalogue.tsv. Full paths and previous Maps are saved in .cep/MAP.txt.
+
+Workflow
+1. Start with graphsearch containing the original query and any complementary queries. Identify promising sources and the information still needed.
+2. Explore the workspace and Map before searching globally again. Consider both ranked sources and intermediate nodes along paths. Use a passage directly when it answers the relevant part. Use read for context, bash to locate evidence in acquired files, and graphexpand on a promising IN or OUT source to find a missing related fact. Prefer expansion when an available source provides a useful anchor.
+3. Do not make consecutive graphsearch calls, including multiple graphsearch calls in the same turn. After graphsearch, read, examine with bash, or expand a relevant returned source. Search globally again only when these sources offer no useful route to the remaining gap. Query that gap rather than repeating similar searches.
+4. Search from complementary angles and read promising documents. Compare their evidence against the specific information need, including the population, intervention, mechanism, or outcome when applicable. Prefer documents directly addressing the query over documents that merely mention its keywords. Continue exploring missing aspects before choosing the ranking.
+
+Response format
+Relevant Documents:
+1. source_id=<ID>
+2. source_id=<ID>
+...
+Return up to 10 distinct source IDs in descending relevance order. Use only IDs actually found in the Map or workspace. Return only the ranked list.

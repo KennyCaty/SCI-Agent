@@ -1,0 +1,21 @@
+{
+  "protocol": "sci-bcp100k-qwen-tokenizer-v2",
+  "source_count": 100195,
+  "segment_max_tokens": 1024,
+  "segment_overlap_tokens": 128,
+  "query_max_tokens": 512,
+  "embedding_dimensions": [
+    1024,
+    256
+  ],
+  "embedding_batch_size": 48,
+  "embedding_bucket_rows": 1024,
+  "cpu_workers": 8,
+  "df_min": 2,
+  "df_max": 4,
+  "ner": "source-global GLiNER2.5 occurrences reprojected to segments",
+  "device": "cuda:0",
+  "segment_encoding_format": "title-section-passage-v1",
+  "heading_metadata": "regenerated deterministic structure-aware heading change points",
+  "segment_token_budget_scope": "complete formatted input including title, optional section, passage and tokenizer special tokens"
+}

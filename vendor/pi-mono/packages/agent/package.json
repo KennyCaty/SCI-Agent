@@ -1,0 +1,32 @@
+{
+  "name": "@mariozechner/pi-agent-core",
+  "version": "0.65.0",
+  "description": "General-purpose agent with transport abstraction, state management, and attachment support",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+    "@mariozechner/pi-ai": "^0.65.0"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "llm",
+    "transport",
+    "state-management"
+  ],
+  "author": "Mario Zechner",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badlogic/pi-mono.git",
+    "directory": "packages/agent"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

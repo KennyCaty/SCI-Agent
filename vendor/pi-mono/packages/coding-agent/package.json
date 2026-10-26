@@ -1,0 +1,80 @@
+{
+  "name": "@mariozechner/pi-coding-agent",
+  "version": "0.65.0",
+  "description": "Coding agent CLI with read, bash, edit, write tools and session management",
+  "type": "module",
+  "piConfig": {
+    "name": "pi",
+    "configDir": ".pi"
+  },
+  "bin": {
+    "pi": "dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/core/hooks/index.d.ts",
+      "import": "./dist/core/hooks/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "docs",
+    "examples",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@mariozechner/jiti": "^2.6.2",
+    "@mariozechner/pi-agent-core": "^0.65.0",
+    "@mariozechner/pi-ai": "^0.65.0",
+    "@mariozechner/pi-tui": "^0.65.0",
+    "@silvia-odwyer/photon-node": "^0.3.4",
+    "ajv": "^8.17.1",
+    "chalk": "^5.5.0",
+    "cli-highlight": "^2.1.11",
+    "diff": "^8.0.2",
+    "extract-zip": "^2.0.1",
+    "file-type": "^21.1.1",
+    "glob": "^13.0.1",
+    "hosted-git-info": "^9.0.2",
+    "ignore": "^7.0.5",
+    "marked": "^15.0.12",
+    "minimatch": "^10.2.3",
+    "proper-lockfile": "^4.1.2",
+    "strip-ansi": "^7.1.0",
+    "undici": "^7.19.1",
+    "yaml": "^2.8.2"
+  },
+  "overrides": {
+    "rimraf": "6.1.2",
+    "gaxios": {
+      "rimraf": "6.1.2"
+    }
+  },
+  "optionalDependencies": {
+    "@mariozechner/clipboard": "^0.3.2"
+  },
+  "keywords": [
+    "coding-agent",
+    "ai",
+    "llm",
+    "cli",
+    "tui",
+    "agent"
+  ],
+  "author": "Mario Zechner",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badlogic/pi-mono.git",
+    "directory": "packages/coding-agent"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  }
+}

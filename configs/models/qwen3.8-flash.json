@@ -1,0 +1,42 @@
+{
+  "model": "qwen3.8-flash",
+  "api": "openai-responses",
+  "context_window": 262144,
+  "max_output_tokens": 32000,
+  "max_turns": 100,
+  "max_seconds": 3600,
+  "api_timeout_seconds": 300,
+  "compaction": {
+    "threshold": 200000,
+    "keep": 12
+  },
+  "reasoning_effort": "xhigh",
+  "minimum_request_interval_seconds": 0,
+  "rate_limit_retry": {
+    "enabled": true,
+    "min_delay_seconds": 1,
+    "max_delay_seconds": 20,
+    "max_attempts": 100,
+    "max_elapsed_seconds": 900
+  },
+  "base_url_env": "SCI_QWEN_FLASH_API_BASE",
+  "api_key_env": "SCI_QWEN_FLASH_API_KEY",
+  "python": "python3",
+  "embedding": {
+    "profile": "256",
+    "backend": "cuda",
+    "corpus_scale": "100k"
+  },
+  "pricing": {
+    "currency": "USD",
+    "source": "Qwen3.8-Flash International",
+    "tiers": [
+      {
+        "input": 0.15,
+        "cache_read": 0.016,
+        "cache_write": 0.2,
+        "output": 0.47
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "provider_config": "../models/gpt-6-luna.json",
+  "embedding_profile": "256",
+  "assets_root": "../../indexes/trec-covid",
+  "prepared_data": "../../data/trec-covid",
+  "embedding_model": "../../models/Qwen3-Embedding-0.6B"
+}

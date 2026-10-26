@@ -1,0 +1,44 @@
+{
+  "model": "deepseek-flash",
+  "api_key_env": "SCI_DEEPSEEK_API_KEY",
+  "context_window": 1048576,
+  "max_output_tokens": 32000,
+  "max_tokens_field": "max_tokens",
+  "thinking_enabled": true,
+  "max_turns": 100,
+  "max_seconds": 3600,
+  "api_timeout_seconds": 300,
+  "compaction": {
+    "threshold": 200000,
+    "keep": 12
+  },
+  "embedding": {
+    "profile": "256",
+    "backend": "cuda",
+    "corpus_scale": "100k"
+  },
+  "python": "python3",
+  "pricing": {
+    "currency": "USD",
+    "source": "DeepSeek Flash off-peak",
+    "tiers": [
+      {
+        "input": 0.15,
+        "cache_read": 0.003,
+        "output": 0.6
+      }
+    ]
+  },
+  "rate_limit_retry": {
+    "enabled": true,
+    "min_delay_seconds": 1,
+    "max_delay_seconds": 20,
+    "max_attempts": 100,
+    "max_elapsed_seconds": 900
+  },
+  "api": "openai-responses",
+  "responses_system_role": "system",
+  "minimum_request_interval_seconds": 5,
+  "reasoning_effort": "high",
+  "base_url_env": "SCI_DEEPSEEK_API_BASE"
+}

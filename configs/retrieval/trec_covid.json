@@ -1,0 +1,6 @@
+{
+  "graph_assets": "{root}/indexes/trec-covid/assets",
+  "corpus": "{root}/data/trec-covid/documents",
+  "bm25_index": "{root}/indexes/trec-covid/source_bm25",
+  "embedding_model": "{root}/models/Qwen3-Embedding-0.6B"
+}

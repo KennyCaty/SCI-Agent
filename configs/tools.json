@@ -1,0 +1,107 @@
+[
+  {
+    "name": "graphsearch",
+    "description": "Search the corpus using the original query and any complementary queries. Acquire retrieved and path documents. Return each query branch’s Top10 source IDs, titles, availability, shared-entity paths, and short relevant raw passages. Full Maps are also saved in .cep/MAP.txt. Later search is a fallback for a gap that current sources cannot resolve.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "queries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "A nonempty list of natural-language corpus queries. Combine complementary formulations in this list. This is the only argument accepted by graphsearch."
+        }
+      },
+      "required": [
+        "queries"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "read",
+    "description": "Read an acquired file or saved tool output. Use the returned path and character window, or offset/limit for lines. Output is capped at 10 KiB. Read further context only when needed to interpret the evidence.",
+    "parameters": {
+      "type": "object",
+      "required": [
+        "path"
+      ],
+      "properties": {
+        "path": {
+          "description": "The exact acquired file path. For source_id=12345 in the Map, use .cep/s/12345.txt.",
+          "type": "string"
+        },
+        "offset": {
+          "description": "Starting line number, beginning at 1. Omit to start at the beginning.",
+          "type": "number"
+        },
+        "limit": {
+          "description": "Number of lines to read. Include enough context to interpret the passage.",
+          "type": "number"
+        },
+        "charOffset": {
+          "type": "number",
+          "description": "Zero-based character offset for a window inside a long text file."
+        },
+        "charLimit": {
+          "type": "number",
+          "description": "Maximum characters to return with charOffset; default 4096."
+        },
+        "byteOffset": {
+          "type": "number",
+          "description": "Zero-based byte offset for a bounded window."
+        },
+        "byteLimit": {
+          "type": "number",
+          "description": "Maximum bytes to return with byteOffset; default 4096."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "bash",
+    "description": "Run a command in the workspace. Use rg -nH to locate evidence in acquired files. Titles and source IDs are listed in .cep/catalogue.tsv. Long matches retain excerpts and read-window hints. Output is capped at 10 KiB and full output is saved.",
+    "parameters": {
+      "type": "object",
+      "required": [
+        "command"
+      ],
+      "properties": {
+        "command": {
+          "description": "A Bash command run in the workspace. Acquired documents are in .cep/s/. python3 is available.",
+          "type": "string"
+        },
+        "timeout": {
+          "description": "Optional command execution time limit, measured in seconds. This argument is specific to bash.",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "graphexpand",
+    "description": "Search the two-hop graph neighborhood of an IN or OUT source for the missing fact described by query. Acquire the anchor and retrieved/path documents. Return the anchor separately and up to ten ranked related sources with shared-entity paths, relevant raw passages, and read windows. Results can reveal new sources or highlight evidence already acquired.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "description": "Numeric source_id copied from the Map or catalogue, written as a string."
+        },
+        "query": {
+          "type": "string",
+          "description": "The missing fact or relationship to seek near the starting document. If omitted, the original question is used."
+        }
+      },
+      "required": [
+        "source_id"
+      ],
+      "additionalProperties": false
+    }
+  }
+]

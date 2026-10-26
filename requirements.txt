@@ -1,0 +1,15 @@
+# Install the CUDA build of torch appropriate to your NVIDIA driver first.
+torch>=2.7,<3
+transformers==4.57.6
+numpy==2.4.6
+scipy==1.17.1
+bm25s==0.3.9
+PyStemmer==3.1.0
+huggingface_hub==0.36.2
+datasets>=3,<5
+pyarrow>=18
+gliner2[local]==2.1.0
+protobuf>=4,<8
+sentencepiece>=0.2,<1
+
+tiktoken==0.11.0

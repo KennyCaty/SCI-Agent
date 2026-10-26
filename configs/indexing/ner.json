@@ -1,0 +1,28 @@
+{
+  "schema": "gliner25-entity-incidence-v1",
+  "model_id": "fastino/gliner2.5-small-v1",
+  "model_sha256": "4ee982787ace270d4bf15dbcb28ced38e0aa201372347114ceedd6336055de2b",
+  "labels": [
+    "person",
+    "organization",
+    "location",
+    "creative work",
+    "event",
+    "award",
+    "profession or role",
+    "disease or medical condition"
+  ],
+  "threshold": 0.5,
+  "window_words": 384,
+  "window_overlap_words": 64,
+  "maximum_subword_tokens": 512,
+  "subword_overlap_tokens": 64,
+  "inference_batch_size": 64,
+  "inference_call_windows": 256,
+  "worker_window_budget": 4096,
+  "canonicalization": "typed_nfkc_casefold_whitespace_v1",
+  "occurrence_to_segment": "maximum_character_overlap_then_midpoint_v1",
+  "aliasing": "none",
+  "minimum_source_df": 1,
+  "keep_high_degree_entities": true
+}

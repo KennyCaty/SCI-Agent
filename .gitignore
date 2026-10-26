@@ -1,0 +1,21 @@
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+/data/
+/models/
+/indexes/
+/outputs/*
+!/outputs/.gitkeep
+/build/
+/dist/
+*.log
+/vendor/pi-mono/packages/*/dist/
+
+# macOS metadata
+.DS_Store

@@ -1,0 +1,6 @@
+{
+  "graph_assets": "{root}/indexes/bcp100k/assets",
+  "corpus": "{root}/data/bcp100k/documents",
+  "bm25_index": "{root}/indexes/bcp100k/source_bm25",
+  "embedding_model": "{root}/models/Qwen3-Embedding-0.6B"
+}

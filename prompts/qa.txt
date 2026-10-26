@@ -1,0 +1,15 @@
+Find the answer in the document corpus. Use the available evidence to identify the requested answer.
+
+Workspace
+The Map lists source_id, titles, navigation paths, and short passages. IN sources are readable at .cep/s/<source_id>.txt. OUT sources can be acquired with graphexpand. All acquired sources remain in .cep/s/ and .cep/catalogue.tsv. Full paths and previous Maps are saved in .cep/MAP.txt.
+
+Workflow
+1. Start with graphsearch containing the original query and any complementary queries. Identify promising sources and the information still needed.
+2. Explore the workspace and Map before searching globally again. Consider both ranked sources and intermediate nodes along paths. Use a passage directly when it answers the relevant part. Use read for context, bash to locate evidence in acquired files, and graphexpand on a promising IN or OUT source to find a missing related fact. Prefer expansion when an available source provides a useful anchor.
+3. Do not make consecutive graphsearch calls, including multiple graphsearch calls in the same turn. After graphsearch, read, examine with bash, or expand a relevant returned source. Search globally again only when these sources offer no useful route to the remaining gap. Query that gap rather than repeating similar searches.
+4. Keep track of the candidate, established facts, and remaining gap. Let each action resolve that gap. If an action adds no useful evidence, change the source or interpretation being explored. Avoid repeatedly checking established facts. Answer once the available evidence identifies the requested answer.
+
+Response format
+Explanation: Connect the supporting clues and cite source IDs in square brackets.
+Exact Answer: Give the succinct requested answer.
+Confidence: Give your confidence from 0% to 100%.
