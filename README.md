@@ -1,9 +1,11 @@
-# SCI
+# Structured Corpus Interaction Agent
+
+Code for **When Connectivity Misleads: Guiding Agentic Search with Contrastive Evidence Paths**.
 
 ## 1. Install
 
 ```bash
-cd SCI_code
+cd SCI-Agent
 conda create -n sci python=3.11 -y
 conda activate sci
 python -m pip install --upgrade pip
